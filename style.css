@@ -1,10 +1,10 @@
 body{
    background: black;
+   font-family: "JetBrains Mono", serif;
     margin: 0px;
     padding: 0px;
     display: flex;
     justify-content: center;
-    font-family: 'JetBrains Mono';
     cursor:default;
 }
 .main{
