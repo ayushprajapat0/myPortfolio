@@ -1,0 +1,311 @@
+body{
+   background: black;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: 'JetBrains Mono';
+    cursor:default;
+}
+.main{
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    background: black;
+    width: 75vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+@media(max-width:768px){
+    .main{
+        width: 100%;
+    }
+}
+
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    margin: 0 0 0.5rem 0;
+    background-color: black;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    height: 3.5rem; 
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 100px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.fixed-nav:hover
+/* .fixed-nav .nav-item:hover */{ 
+    transform: scale(1.1);
+    /* Increases navbar size */
+    /* box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5); */
+}
+.fixed-nav .nav-item:hover i{
+    display: none;
+}
+.fixed-nav .nav-item {
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Ensure text appears relative to the icon */
+    cursor: default;
+}
+
+/* Icon Styling */
+.nav-item i {
+    color: white;
+    font-size: x-large;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Slight scaling effect when hovering over a nav item */
+/* .fixed-nav .nav-item:hover {
+    transform: scale(1.2);
+} */
+
+/* Icon text hidden initially */
+.nav-item .icon-text {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+    transform: translateY(5px);
+    
+}
+
+/* Show icon text smoothly when hovering over nav item */
+.fixed-nav .nav-item:hover .icon-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+@media(max-width:768px){
+    .fixed-nav{
+        width:60vw ;
+    }
+    .nav-item .icon-text{
+        font-size: 3vw;
+    }
+}
+
+/* <-!-hero section --> */
+.hero{
+    display: flex;
+    align-items: center;
+    
+}
+.hero-img{
+    height: 15vw;
+    width: 15vw;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 3vw;
+}
+.hero-info{
+    padding: 0.5rem;
+}
+.hero-info .hero-name{
+    letter-spacing: -3px;
+    font-size: 3vw;
+}
+.hero-info .hero-detail{
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    opacity: 0.8;
+}
+@media(max-width:768px){
+    .hero-info .hero-name{
+        letter-spacing: 0;
+        line-height: 0%;
+        font-size: 4.5vw;
+    }
+    .hero-info .hero-detail{
+        font-size: 3vw;
+        line-height: 1rem;
+        opacity: 0.8;
+    }
+    .hero-img{
+        height: 20vw;
+        width: 20vw;
+    }
+}
+
+/* <-About section--> */
+.about
+{
+    padding: 1rem;
+}
+.hero-about{
+    color: rgba(255, 255, 255, 0.8);
+}
+.hero-about .bold{
+    text-decoration: underline;
+    color: rgb(255, 255, 255); 
+    transition:0.5s; 
+    cursor: default; 
+}
+.bold:hover{
+    font-size: large;
+}
+@media(max-width:440px){
+    .hero-about{
+        font-size: 0.5rem;
+        line-height: 1rem;
+    }
+}
+
+
+/* <---Education--> */
+.education{
+    padding: 1rem;
+}
+.college{
+    display: flex;
+    line-height: 2;
+    margin-bottom:0.5rem;
+    align-items: center;
+    /* justify-content: center; */
+}
+.education img{
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    margin-right:1rem;
+       
+}
+.clg-name{
+    font-weight: 700;
+}
+.clg-name a{
+    text-decoration: none;
+    color: white;
+    cursor: default;
+}
+.clg-name::after {
+    content: "\2B9E"; /* Unicode for right arrow */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.clg-name:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+}
+.degree{
+    opacity: 0.8;
+    font-size: small;
+    line-height: 1.3;
+}
+@media(max-width:768px){
+    .clg-name{
+        font-size: 2.5vw;
+    }
+    .degree{
+        font-size: 2vw;
+    }
+    .education img{
+        height: 8vw;
+        width: 8vw;
+    }
+}
+
+/* <- Skills => */
+.skills{
+    padding: 1rem;
+}
+.skill-block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.pl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 1.5rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.899);
+    color: black;
+    padding: 4px 8px;
+}
+.pl-img{
+    margin: 2px;
+    margin-right: 4px;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+.pl:hover{
+    background-color: rgba(255, 255, 255, 1) ;
+}
+.pl:hover .pl-img{
+    transform: scale(1.3);
+}
+@media(max-width:768px){
+    .skill-block{
+        width: 100%;
+    }
+    .pl span{
+        display: none;
+    }
+    .pl:hover span{
+        display: block;
+    }
+}
+
+
+
+.work{
+    padding: 1rem;
+}
+.work img{
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    margin-right:1rem;
+}
+.individual-work{
+    display: flex;
+    line-height: 2;
+    margin-bottom:0.5rem;
+    align-items: center;
+    /* justify-content: center; */
+}
+.company-name{
+    font-weight: 700;
+}
+.role , .time{
+    opacity: 0.8;
+    font-size: small;
+    line-height: 1.3;
+}
+@media(max-width:768px){
+    .company-name{
+        font-size: 2.5vw;
+    }
+    .role , .time{
+        font-size: 2vw;
+    }
+    .work img{
+        height: 8vw;
+        width: 8vw;
+    }
+}
